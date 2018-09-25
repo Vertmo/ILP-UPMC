@@ -1,0 +1,10 @@
+bin/
+
+SamplesILP*/*.c
+
+# C generated files
+*.a
+*.o
+C/include
+C/gc-*/
+C/HOSTTYPE
