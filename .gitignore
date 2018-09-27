@@ -1,6 +1,6 @@
 bin/
 
-SamplesILP*/*.c
+Samples*/*.c
 
 # C generated files
 *.a

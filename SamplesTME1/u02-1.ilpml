@@ -1,0 +1,2 @@
+let x = 3 in
+if (x > 2) then print("Coucou"); true

@@ -1,0 +1,7 @@
+let a = 2 in
+let b = 5 in
+let c = 3 in
+let delta = b * b - 4 * a * c in
+if (delta < 0) then "discriminant négatif : aucune racine"
+else if (delta == 0) then "discriminant nul : une racine"
+else "discriminant positif : deux racines"
