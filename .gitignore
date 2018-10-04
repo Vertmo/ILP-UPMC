@@ -8,3 +8,6 @@ Samples*/*.c
 C/include
 C/gc-*/
 C/HOSTTYPE
+
+# ANTLR generated grammars
+target/generated-sources
