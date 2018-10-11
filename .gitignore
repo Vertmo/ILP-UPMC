@@ -5,9 +5,9 @@ Samples*/*.c
 # C generated files
 *.a
 *.o
-C/include
-C/gc-*/
-C/HOSTTYPE
+**/C/include
+**/C/gc-*/
+**/C/HOSTTYPE
 
 # ANTLR generated grammars
 target/generated-sources

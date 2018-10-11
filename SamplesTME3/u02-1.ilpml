@@ -1,0 +1,2 @@
+let v = makeVector(5, 42) in
+(print(vectorLength(v)); vectorGet(v, (1+2)))
