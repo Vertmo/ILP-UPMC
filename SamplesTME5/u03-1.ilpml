@@ -1,0 +1,23 @@
+let i = 0 in let j = 0 in (
+    b1 : while (i <= 100) do (
+        j = 0;
+        b2 : while (j <= 4) do (
+              j = j + 1;
+              i = i + 1;
+              if(i + j >= 14) then break b1;
+        )
+    );
+
+    print(i);
+    j = 0;
+
+    b3 : while (i < 20) do (
+        i = i + 1;
+        while (true) do (
+              j = j + 1;
+              continue b3;
+              j = j + 10000;
+        )
+    );
+    j
+)

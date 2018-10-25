@@ -1,0 +1,7 @@
+let x = 0 in (
+    while(x < 10) do (
+            x = x + 1;
+            if(x > 4) then break;
+    );
+    x
+)

@@ -1,0 +1,8 @@
+let x = 1 in (
+    while(x < 10) do (
+            x = x * 2;
+            if(x > 4) then continue;
+            x = x + 1;
+    );
+    x
+)
