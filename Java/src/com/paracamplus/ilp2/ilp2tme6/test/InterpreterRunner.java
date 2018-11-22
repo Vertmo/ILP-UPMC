@@ -7,6 +7,7 @@ import com.paracamplus.ilp1.interpreter.interfaces.EvaluationException;
 import com.paracamplus.ilp1.interpreter.interfaces.ILexicalEnvironment;
 import com.paracamplus.ilp2.ast.ASTfactory;
 import com.paracamplus.ilp2.ilp2tme6.InlineTransform;
+import com.paracamplus.ilp2.ilp2tme6.RemoveUnusedTransform;
 
 public class InterpreterRunner extends com.paracamplus.ilp1.interpreter.test.InterpreterRunner {
     @Override
@@ -22,6 +23,14 @@ public class InterpreterRunner extends com.paracamplus.ilp1.interpreter.test.Int
             program2 = itr.visit(program2, null);
         } catch (CompilationException e) {
             throw new EvaluationException("CopyTransform: "+e.getMessage());
+        }
+
+        // Bonus: suppression des variables et fonctions inutilisées
+        try {
+            RemoveUnusedTransform rut = new RemoveUnusedTransform(new ASTfactory());
+            program2 = rut.visit(program2, null);
+        } catch (CompilationException e) {
+            throw new EvaluationException("RemoveUnusedTransform: "+e.getMessage());
         }
 
         ILexicalEnvironment lexenv = new EmptyLexicalEnvironment();

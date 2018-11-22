@@ -13,6 +13,7 @@ import com.paracamplus.ilp1.tools.FileTool;
 import com.paracamplus.ilp1.tools.ProgramCaller;
 import com.paracamplus.ilp2.ast.ASTfactory;
 import com.paracamplus.ilp2.ilp2tme6.InlineTransform;
+import com.paracamplus.ilp2.ilp2tme6.RemoveUnusedTransform;
 
 public class CompilerRunner extends com.paracamplus.ilp1.compiler.test.CompilerRunner {
     @Override
@@ -27,6 +28,10 @@ public class CompilerRunner extends com.paracamplus.ilp1.compiler.test.CompilerR
         com.paracamplus.ilp2.interfaces.IASTprogram program2 = (com.paracamplus.ilp2.interfaces.IASTprogram) program;
         InlineTransform itr = new InlineTransform(new ASTfactory(), program2.getFunctionDefinitions());
         program2 = itr.visit(program2, null);
+
+        // Bonus: suppression des variables et fonctions inutilisées
+        RemoveUnusedTransform rut = new RemoveUnusedTransform(new ASTfactory());
+        program2 = rut.visit(program2, null);
 
         // lancement de la compilation vers C
         if (compiler == null) {
