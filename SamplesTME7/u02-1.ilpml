@@ -1,0 +1,13 @@
+function f(x, y) (
+  print(x);
+  yield();
+  print(y);
+  yield();
+);
+
+let x = costart f(42, 64) in (
+  print("x : ");
+  resume(x);
+  print(" y : ");
+  resume(x);
+)
