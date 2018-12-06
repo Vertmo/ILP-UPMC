@@ -1,0 +1,10 @@
+class Point {
+    var x;
+    var y;
+}
+
+let p = new Point(11, 22) in
+  let s = "y" in (
+  p[s] = 42;
+  p[s]
+)

@@ -1,0 +1,10 @@
+class Point {
+    var x;
+    var y;
+}
+
+let p = new Point(11, 22) in (
+  print(p has "x");
+  print(p has "z");
+  p["y"]
+)
