@@ -1,0 +1,13 @@
+class A {
+      method m1(x) x
+}
+
+class B extends A {
+      method m1(x) x
+      method m2(x) x
+}
+
+let b = new B() in
+let i = 0 in
+while(i < 100000) do (i = i + 1; b.m1(2); b.m2(2); b.m1(2); b.m2(2));
+3
