@@ -1,0 +1,7 @@
+(
+  if true then g0 = 0 else g1 = 1;
+  print(defined(g0)); // true
+  print(defined(g1)); // false
+  print(defined(print)); // true
+  4
+)
